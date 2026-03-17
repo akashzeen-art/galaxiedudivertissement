@@ -48,13 +48,8 @@ const App = () => {
         return (
           <>
             <EnhancedHeroSection />
-            <EnhancedFeatures />
+            <EnhancedFeatures onSelectCategory={setActivePage} />
             <VideoSliderSection />
-            <div className="px-4 md:px-8 pb-8 space-y-12 md:space-y-16 bg-white">
-              <TopFighters fighters={topFighters} />
-              <Rankings rankings={rankings} />
-              <CommunitySection />
-            </div>
           </>
         );
       case 'Fighters':

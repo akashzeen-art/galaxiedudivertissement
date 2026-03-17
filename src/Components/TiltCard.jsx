@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-const TiltCard = ({ children, className = '' }) => {
+const TiltCard = ({ children, className = '', onClick }) => {
   const cardRef = useRef(null);
 
   const handleMouseMove = (e) => {
@@ -30,7 +30,8 @@ const TiltCard = ({ children, className = '' }) => {
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`transition-transform duration-300 ease-out ${className}`}
+      onClick={onClick}
+      className={`transition-transform duration-300 ease-out ${onClick ? 'cursor-pointer' : ''} ${className}`}
       style={{ transformStyle: 'preserve-3d' }}
     >
       {children}

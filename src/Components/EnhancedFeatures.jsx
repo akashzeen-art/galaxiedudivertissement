@@ -1,31 +1,35 @@
 import TiltCard from './TiltCard';
 import AnimatedTitle from './AnimatedTitle';
 
-const EnhancedFeatures = () => {
+const EnhancedFeatures = ({ onSelectCategory }) => {
   const features = [
     {
       id: 1,
-      title: 'DESSIN ANIMÉ',
-      description: 'Aventures animées pour tous les âges',
+      title: 'DESSINS ANIMÉS',
+      description: 'Des aventures animées pour toute la famille',
       size: 'large',
+      page: 'Dessin Animé',
     },
     {
       id: 2,
       title: 'COMÉDIE',
-      description: 'Rire aux éclats chaque jour',
+      description: 'Des fous rires et du stand-up à tout moment',
       size: 'small',
+      page: 'Comédie',
     },
     {
       id: 3,
-      title: 'CUISINE',
-      description: 'Délicieuses recettes du monde entier',
+      title: 'GASTRONOMIE',
+      description: 'Recettes gourmandes et idées faciles à reproduire',
       size: 'small',
+      page: 'Cuisine',
     },
     {
       id: 4,
-      title: 'MODE',
-      description: 'Style, beauté et tendances',
+      title: 'STYLE',
+      description: 'Style, beauté et inspirations du moment',
       size: 'small',
+      page: 'Mode',
     },
   ];
 
@@ -33,7 +37,7 @@ const EnhancedFeatures = () => {
     <section className="py-20 px-4 md:px-8 bg-black">
       <div className="max-w-7xl mx-auto">
         <AnimatedTitle
-          title="CATÉGORIES DE CONTENU"
+          title="CATÉGORIES DE CONTENUS"
           className="font-zentry text-4xl md:text-6xl font-black text-white text-center mb-16 uppercase"
         />
 
@@ -41,6 +45,7 @@ const EnhancedFeatures = () => {
           {features.map((feature, index) => (
             <TiltCard
               key={feature.id}
+              onClick={onSelectCategory ? () => onSelectCategory(feature.page) : undefined}
               className={`${
                 index === 0 ? 'md:col-span-2 md:row-span-2' : ''
               } bg-blue-75 rounded-3xl p-8 border border-white/20 backdrop-blur-md h-96 md:h-[65vh] flex flex-col justify-end relative overflow-hidden`}
