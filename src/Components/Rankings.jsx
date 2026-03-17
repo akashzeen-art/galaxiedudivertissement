@@ -17,16 +17,16 @@ const Rankings = ({ rankings }) => {
         viewport={{ once: true }}
       >
         <AnimatedTitle
-          title="FIGHTER RANKINGS"
+          title="CLASSEMENT DES CATÉGORIES"
           className="font-zentry text-3xl md:text-4xl font-bold text-black mb-8 text-center uppercase"
         />
         
         <div className="bg-white/80 backdrop-blur-xl rounded-2xl border border-gray-200/50 overflow-hidden shadow-lg">
           <div className="grid grid-cols-4 gap-4 p-4 bg-gray-50 border-b border-gray-200">
-            <div className="font-orbitron font-bold text-black">RANK</div>
-            <div className="font-orbitron font-bold text-black">FIGHTER</div>
-            <div className="font-orbitron font-bold text-black">RECORD</div>
-            <div className="font-orbitron font-bold text-black">KO %</div>
+            <div className="font-orbitron font-bold text-black">RANG</div>
+            <div className="font-orbitron font-bold text-black">CATÉGORIE</div>
+            <div className="font-orbitron font-bold text-black">VIDÉOS</div>
+            <div className="font-orbitron font-bold text-black">NOTE</div>
           </div>
           
           {rankings.map((fighter, index) => (

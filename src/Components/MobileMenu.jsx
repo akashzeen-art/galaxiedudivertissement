@@ -29,7 +29,7 @@ const MobileMenu = ({ isOpen, onClose, activePage, setActivePage }) => {
       >
         <div className="flex flex-col h-full p-6">
           <div className="flex items-center justify-between mb-8">
-            <img src="/55(2).png" alt="HardKnockTV" className="h-12 w-auto object-contain" />
+            <img src="/55(2).png" alt="GALAXIE" className="h-12 w-auto object-contain" />
             <button
               onClick={onClose}
               className="text-gray-600 hover:text-black transition-colors p-2 hover:bg-gray-100 rounded-lg"

@@ -30,7 +30,7 @@ const CommunitySection = () => {
         viewport={{ once: true }}
       >
         <h2 className="font-orbitron text-3xl md:text-4xl font-bold text-black mb-8 text-center">
-          FAN <span className="text-gray-600">ZONE</span>
+          ESPACE <span className="text-gray-600">FANS</span>
         </h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -44,16 +44,16 @@ const CommunitySection = () => {
           >
             <div className="flex items-center gap-2 mb-4">
               <Users className="w-5 h-5 text-black" />
-              <h3 className="font-orbitron text-xl font-bold text-black">Community Poll</h3>
+              <h3 className="font-orbitron text-xl font-bold text-black">Sondage Communautaire</h3>
             </div>
             
-            <h4 className="text-black text-lg mb-6">Who wins the next championship?</h4>
+            <h4 className="text-black text-lg mb-6">Quelle est votre catégorie préférée ?</h4>
             
             <div className="space-y-3">
               {[
-                { name: 'ARM WRESTLING', percentage: 45, votes: 2847 },
-                { name: 'MMA FIGHT', percentage: 35, votes: 2213 },
-                { name: 'TAEKWONDO', percentage: 20, votes: 1264 }
+                { name: 'CARTOON', percentage: 45, votes: 2847 },
+                { name: 'COMEDY', percentage: 35, votes: 2213 },
+                { name: 'COOKING', percentage: 20, votes: 1264 }
               ].map((fighter, index) => (
                 <motion.button
                   key={fighter.name}
@@ -95,15 +95,15 @@ const CommunitySection = () => {
           >
             <div className="flex items-center gap-2 mb-4">
               <TrendingUp className="w-5 h-5 text-red-500" />
-              <h3 className="font-orbitron text-xl font-bold text-white">Live Reactions</h3>
+              <h3 className="font-orbitron text-xl font-bold text-white">Réactions en Direct</h3>
             </div>
             
             <div className="space-y-4">
               <div className="flex justify-around">
                 {[
-                  { emoji: '🔥', label: 'Fire', count: reactions.fire, type: 'fire' },
+                  { emoji: '🔥', label: 'Feu', count: reactions.fire, type: 'fire' },
                   { emoji: '👊', label: 'Punch', count: reactions.punch, type: 'punch' },
-                  { emoji: '👑', label: 'Crown', count: reactions.crown, type: 'crown' }
+                  { emoji: '👑', label: 'Couronne', count: reactions.crown, type: 'crown' }
                 ].map((reaction) => (
                   <motion.button
                     key={reaction.type}
@@ -122,7 +122,7 @@ const CommunitySection = () => {
               <div className="bg-gray-800/60 rounded-lg p-4">
                 <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
                   <MessageCircle className="w-4 h-4" />
-                  Recent Comments
+                  Commentaires Récents
                 </h4>
                 <div className="space-y-3 text-sm">
                   <div className="flex items-start gap-3">
@@ -130,8 +130,8 @@ const CommunitySection = () => {
                       A
                     </div>
                     <div>
-                      <p className="text-white"><span className="font-semibold">ArmWrestling_Fan</span> ARM WRESTLING is unstoppable! 🔥</p>
-                      <p className="text-gray-400 text-xs">2 min ago</p>
+                      <p className="text-white"><span className="font-semibold">Cartoon_Fan</span> CARTOON c'est trop bien ! 🎉</p>
+                      <p className="text-gray-400 text-xs">il y a 2 min</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -139,8 +139,8 @@ const CommunitySection = () => {
                       M
                     </div>
                     <div>
-                      <p className="text-white"><span className="font-semibold">MMA_King</span> MMA FIGHT has the power! 👊</p>
-                      <p className="text-gray-400 text-xs">5 min ago</p>
+                      <p className="text-white"><span className="font-semibold">Comedy_King</span> COMEDY me fait toujours rire ! 😂</p>
+                      <p className="text-gray-400 text-xs">il y a 5 min</p>
                     </div>
                   </div>
                 </div>

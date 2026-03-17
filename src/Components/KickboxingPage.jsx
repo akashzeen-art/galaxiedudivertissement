@@ -6,7 +6,6 @@ const KickboxingPage = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [hoverSlide, setHoverSlide] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
 
   const topSliderVideos = [
     { id: 1, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/KickBoxing/Thumbnails/SasipradpaGymvsTungLinKun.png', title: 'Sasipradpa Gym vs Tung Lin Kun', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/909baf12-777d-44b6-aaa7-d08a3369f6e1/play_720p.mp4' },
@@ -103,12 +102,11 @@ const KickboxingPage = () => {
         </div>
       </div>
 
-      <div className="relative bg-gray-900 py-16 md:py-24 transition-all duration-500" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} onClick={() => setIsHovered(!isHovered)}>
+      <div className="relative bg-gray-900 py-16 md:py-24">
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative max-w-7xl mx-auto px-4 md:px-8">
-          <AnimatedTitle title="Click Here" className="text-white mb-8 font-zentry text-4xl md:text-6xl font-black text-center uppercase" />
-          <div className={`transition-all duration-500 ${isHovered ? 'opacity-100 max-h-[500px]' : 'opacity-0 max-h-0 overflow-hidden'}`}>
-            <div className="relative">
+          <AnimatedTitle title="More Kickboxing Videos" className="text-white mb-8 font-zentry text-4xl md:text-6xl font-black text-center uppercase" />
+          <div className="relative">
               <div className="overflow-hidden">
                 <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${hoverSlide * (100 / 3)}%)` }}>
                   {hoverSliderVideos.map((video) => (
@@ -128,7 +126,6 @@ const KickboxingPage = () => {
                 {hoverSliderVideos.map((_, idx) => (<button key={idx} onClick={() => setHoverSlide(idx)} className={`w-2 h-2 rounded-full transition-all ${hoverSlide === idx ? 'bg-white w-8' : 'bg-white/50'}`} />))}
               </div>
             </div>
-          </div>
         </div>
       </div>
 

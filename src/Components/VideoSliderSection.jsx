@@ -9,16 +9,16 @@ const VideoSliderSection = () => {
   const scrollRef = useRef(null)
   const [playingVideo, setPlayingVideo] = useState(null)
   const videos = [
-    { id: 1, title: 'Arm Bender Battles', thumbnail: 'https://api.ameora.fun/content/armwrestling/ArmWrestling/ArmBenderBattles/ArmBenderBattlesThumbnails.jpg', duration: '5:42', views: '2.1M', category: 'Arm Wrestling', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/98ecdb0f-6e36-4f95-b3fc-478009537404/play_360p.mp4' },
-    { id: 2, title: 'Arm Clash Chronicles', thumbnail: 'https://api.ameora.fun/content/armwrestling/ArmWrestling/ArmClashChronicles/ArmClashChroniclesThumbnails.jpg', duration: '8:15', views: '3.2M', category: 'Arm Wrestling', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/6ca5c577-79cd-499b-82ce-77349391b0b8/play_360p.mp4' },
-    { id: 3, title: 'Slap Fight Battle 1', thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/slapThumbnails/Slap1.jpg', duration: '7:30', views: '2.3M', category: 'Slap Fight', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/7b457eda-e09b-4433-b754-469c32b166c3/play_360p.mp4' },
-    { id: 4, title: 'Slap Fight Battle 2', thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/slapThumbnails/Slap2.jpg', duration: '10:20', views: '1.8M', category: 'Slap Fight', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/0c44792b-9f49-43ba-8fd3-7ef2786ec7b1/play_360p.mp4' },
-    { id: 5, title: 'Roger Huerta vs Chad Hinton', thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/RogerHuertavsChadHinton.png', duration: '6:45', views: '4.1M', category: 'MMA Fight', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/0506d21e-0595-42ad-b75e-0ffb7f177d4f/play_720p.mp4' },
-    { id: 6, title: 'Rampage Jackson vs Joey Beltran', thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/RampageJacksonvsJoeyBeltran.png', duration: '12:30', views: '2.9M', category: 'MMA Fight', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/89883c94-0135-4030-ac72-960174d92372/play_720p.mp4' },
-    { id: 7, title: 'Seokbae Kim VS Abolfazl Yaghoubijou', thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/Taekwondo/Thumbnails/SeokbaeKimVSAbolfazlYaghoubijou.png', duration: '9:15', views: '1.5M', category: 'Taekwondo', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/a8d14831-2458-47de-8edf-a08daf2bd167/play_720p.mp4' },
-    { id: 8, title: 'Moscow 2017 World Taekwondo Grand Prix', thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/Taekwondo/Thumbnails/Moscow2017WorldTaekwondoGrandPrixSemifinal.png', duration: '11:00', views: '3.7M', category: 'Taekwondo', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/55c7f309-6549-4e29-85d3-a7d7f77853ab/play_720p.mp4' },
-    { id: 9, title: 'Sasipradpa Gym vs Tung Lin Kun', thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/KickBoxing/Thumbnails/SasipradpaGymvsTungLinKun.png', duration: '8:45', views: '2.8M', category: 'Kickboxing', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/909baf12-777d-44b6-aaa7-d08a3369f6e1/play_720p.mp4' },
-    { id: 10, title: 'Saen Sae Jitka vs Mikey Dating', thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/KickBoxing/Thumbnails/SaenSaeJitkavsMikeyDating.png', duration: '15:20', views: '5.2M', category: 'Kickboxing', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/d92082aa-43ac-4c1b-90c1-e42306b7d438/play_720p.mp4' }
+    { id: 1, title: 'Le running', thumbnail: 'https://api.ameora.fun/content/GalaxiWebsite/COMEDY-50/i1.jpg', duration: '5:42', views: '2.1M', category: 'Comedy', videoUrl: 'https://api.ameora.fun/content/GalaxiWebsite/COMEDY-50/v1.mp4' },
+    { id: 2, title: 'Bande dessinée', thumbnail: 'https://api.ameora.fun/content/GalaxiWebsite/COMEDY-50/i3.jpg', duration: '8:15', views: '3.2M', category: 'Comedy', videoUrl: 'https://api.ameora.fun/content/GalaxiWebsite/COMEDY-50/v3.mp4' },
+    { id: 3, title: 'Burger au barbecue', thumbnail: 'https://api.ameora.fun/content/GalaxiWebsite/COOKING/i4.jpg', duration: '7:30', views: '2.3M', category: 'Cooking', videoUrl: 'https://api.ameora.fun/content/GalaxiWebsite/COOKING/v4.mp4' },
+    { id: 4, title: 'Lasagna Bolognese', thumbnail: 'https://api.ameora.fun/content/GalaxiWebsite/COOKING/i16.jpg', duration: '10:20', views: '1.8M', category: 'Cooking', videoUrl: 'https://api.ameora.fun/content/GalaxiWebsite/COOKING/v16.mp4' },
+    { id: 5, title: 'Acne Routine', thumbnail: 'https://api.ameora.fun/content/GalaxiWebsite/FASHION-24/i3.jpg', duration: '6:45', views: '4.1M', category: 'Fashion', videoUrl: 'https://api.ameora.fun/content/GalaxiWebsite/FASHION-24/v3.mp4' },
+    { id: 6, title: 'Tuto Turban Facile À Faire', thumbnail: 'https://api.ameora.fun/content/GalaxiWebsite/FASHION-24/i2.jpg', duration: '12:30', views: '2.9M', category: 'Fashion', videoUrl: 'https://api.ameora.fun/content/GalaxiWebsite/FASHION-24/v2.mp4' },
+    { id: 7, title: 'Totally Spies Episode 1', thumbnail: 'https://api.ameora.fun/content/GalaxiWebsite/CARTOONS-32/CARTOONS-11/i1.jpg', duration: '9:15', views: '1.5M', category: 'Cartoon', videoUrl: 'https://api.ameora.fun/content/GalaxiWebsite/CARTOONS-32/CARTOONS-11/v1.mp4' },
+    { id: 8, title: 'Totally Spies Episode 2', thumbnail: 'https://api.ameora.fun/content/GalaxiWebsite/CARTOONS-32/CARTOONS-11/i2.jpg', duration: '11:00', views: '3.7M', category: 'Cartoon', videoUrl: 'https://api.ameora.fun/content/GalaxiWebsite/CARTOONS-32/CARTOONS-11/v2.mp4' },
+    { id: 9, title: 'Maquillage simple', thumbnail: 'https://api.ameora.fun/content/GalaxiWebsite/FASHION-26/i8.jpg', duration: '8:45', views: '2.8M', category: 'Fashion', videoUrl: 'https://api.ameora.fun/content/GalaxiWebsite/FASHION-26/v8.mp4' },
+    { id: 10, title: 'Moroccan Tagine', thumbnail: 'https://api.ameora.fun/content/GalaxiWebsite/COOKING/i20.jpg', duration: '15:20', views: '5.2M', category: 'Cooking', videoUrl: 'https://api.ameora.fun/content/GalaxiWebsite/COOKING/v20.mp4' }
   ]
 
   const handlePlayVideo = (videoId) => setPlayingVideo(videoId)
@@ -31,7 +31,7 @@ const VideoSliderSection = () => {
         
         <div className="relative z-10">
           <AnimatedTitle
-            title="FEATURED VIDEOS"
+            title="VIDÉOS EN VEDETTE"
             className="font-zentry text-4xl md:text-4xl font-black text-black text-center mb-16 uppercase"
           />
           
@@ -80,7 +80,7 @@ const VideoSliderSection = () => {
                     </h3>
                     <div className="flex items-center gap-2 text-gray-500 text-sm">
                       <Eye className="w-4 h-4" />
-                      {video.views} views
+                      {video.views} vues
                     </div>
                   </div>
                 </motion.div>

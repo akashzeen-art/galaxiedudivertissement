@@ -45,7 +45,7 @@ const Preloader = ({ onComplete }) => {
     <div className="preloader fixed inset-0 bg-black z-[100] flex items-center justify-center">
       <div className="preloader-content text-center">
         <div className="preloader-logo mb-8">
-          <img src="/55(2).png" alt="HardKnockTV" className="h-24 w-auto mx-auto" />
+          <img src="/55(2).png" alt="GALAXIE" className="h-24 w-auto mx-auto" />
         </div>
         <div className="w-64 h-2 bg-gray-800 rounded-full overflow-hidden">
           <div

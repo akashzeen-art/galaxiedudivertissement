@@ -19,14 +19,14 @@ const Header = ({ onMobileMenuClick, isMinimized }) => {
       </button>
 
       <div className="flex items-center gap-2">
-        <img src="/55.png" alt="HardKnockTV" className="h-8 md:h-10 w-auto object-contain" />
+        <img src="/55.png" alt="GALAXIE" className="h-8 md:h-10 w-auto object-contain" />
       </div>
 
       <div className="flex-1 max-w-xl">
         <div className="relative">
           <Search className="absolute left-3 md:left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 md:w-5 md:h-5" />
           <input type="text"
-            placeholder='Search fighters, events, videos...'
+            placeholder='Rechercher dessins animés, comédies, cuisine, mode...'
             className='w-full bg-gray-50 text-black pl-10 md:pl-12 pr-3 md:pr-4 py-2 md:py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black focus:border-black placeholder-gray-400 text-sm md:text-base transition-all'
           />
         </div>

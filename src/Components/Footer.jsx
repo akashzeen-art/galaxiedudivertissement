@@ -15,13 +15,13 @@ const Footer = () => {
           {/* Newsletter Section */}
           <div className="text-center mb-12">
             <h3 className="font-zentry text-2xl font-bold text-white mb-4 uppercase">
-              STAY IN THE FIGHT
+              RESTEZ DIVERTIS
             </h3>
-            <p className="text-gray-400 mb-6 font-circular-web">Get the latest updates on fights and fighters</p>
+            <p className="text-gray-400 mb-6 font-circular-web">Recevez les dernières actualités sur les dessins animés, la comédie, la cuisine et la mode</p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder="Entrez votre e-mail"
                 className="flex-1 bg-gray-900 text-white px-4 py-3 rounded-lg border border-gray-800 focus:outline-none focus:ring-2 focus:ring-violet-300 focus:border-violet-300 placeholder-gray-500"
               />
               <motion.button
@@ -29,7 +29,7 @@ const Footer = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Subscribe
+                S'abonner
               </motion.button>
             </div>
           </div>
@@ -37,10 +37,10 @@ const Footer = () => {
           {/* Bottom Bar */}
           <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-800">
             <div className="font-zentry text-xl font-bold text-white mb-4 md:mb-0">
-              HARDKNOCK<span className="text-violet-300">TV</span>
+              GALAX<span className="text-violet-300">IE</span>
             </div>
             <p className="text-gray-500 text-sm font-circular-web">
-              © 2026 HardKnockTV. All rights reserved.
+              © 2026 GALAXIE. Tous droits réservés.
             </p>
           </div>
         </motion.div>

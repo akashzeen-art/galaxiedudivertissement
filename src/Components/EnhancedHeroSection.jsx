@@ -49,10 +49,10 @@ const EnhancedHeroSection = () => {
   }}
 >
   <source
-    src="https://api.ameora.fun/content/armwrestling/bg_video/intro_1_.mp4"
+    src="https://api.ameora.fun/content/vas_cartoon/video/tomandjerryfr/LesGRANDESaventuresfantasydeTometJerry.mp4"
     type="video/mp4"
   />
-  Your browser does not support the video tag.
+  Votre navigateur ne supporte pas la balise vidéo.
 </video>
 
 
@@ -60,18 +60,18 @@ const EnhancedHeroSection = () => {
 
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-5 md:px-10">
         <h1 className="font-zentry text-5xl md:text-7xl lg:text-9xl font-black text-white mb-6 uppercase leading-tight">
-          WITNESS THE <br />
-          <span className="text-blue-50">ULTIMATE COMBAT</span>
+          DÉCOUVREZ LE <br />
+          <span className="text-blue-50">MEILLEUR DIVERTISSEMENT</span>
         </h1>
         <p className="font-circular-web text-lg md:text-xl text-blue-50 max-w-2xl mb-8">
-          Experience the world's most intense combat sports. Where champions are forged and legends are born.
+          Explorez les meilleurs dessins animés, comédies, recettes de cuisine et tendances mode. Là où la créativité rencontre le divertissement.
         </p>
         <div className="flex gap-4">
           <button className="bg-violet-300 hover:bg-violet-300/80 text-white px-8 py-4 rounded-lg font-general uppercase font-bold transition-all duration-300 hover:scale-105">
-            Explore Now
+            Explorer Maintenant
           </button>
           <button className="bg-white/20 backdrop-blur-md hover:bg-white/30 text-white px-8 py-4 rounded-lg font-general uppercase font-bold transition-all duration-300 hover:scale-105 border border-white/20">
-            View Disciplines
+            Voir les Catégories
           </button>
         </div>
       </div>

@@ -1,19 +1,17 @@
 import {
   Home,
-  Dumbbell,
-  Hand,
-  Swords,
-  Target,
-  Zap
+  Tv,
+  Laugh,
+  ChefHat,
+  Shirt
 } from "lucide-react";
 
 export const menuItems = [
-  { icon: Home, label: "Home" },
-  { icon: Dumbbell, label: "Arm Wrestling" },
-  { icon: Hand, label: "Slap Fight" },
-  { icon: Swords, label: "MMA Fight" },
-  { icon: Target, label: "Taekwondo" },
-  { icon: Zap, label: "Kickboxing" },
+  { icon: Home, label: "Accueil" },
+  { icon: Tv, label: "Dessin Animé" },
+  { icon: Laugh, label: "Comédie" },
+  { icon: ChefHat, label: "Cuisine" },
+  { icon: Shirt, label: "Mode" },
 ];
 
 export const libraryItems = [];

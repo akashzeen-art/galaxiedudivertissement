@@ -30,10 +30,10 @@ const Sidebar = ({ isMinimized, onToggle, isMobile, setTooltip, activePage, setA
       {/* Logo */}
       <div className={`flex items-center ${isMinimized && !isMobile ? 'justify-center' : 'justify-between'} mb-8 shrink-0`}>
         {isMinimized && !isMobile ? (
-          <img src="/55(2).png" alt="HardKnockTV" className="h-13 w-auto object-contain cursor-pointer" onClick={onToggle} />
+          <img src="/55(2).png" alt="GALAXIE" className="h-13 w-auto object-contain cursor-pointer" onClick={onToggle} />
         ) : (
           <>
-            <img src="/55(2).png" alt="HardKnockTV" className="h-12 w-auto object-contain" />
+            <img src="/55(2).png" alt="GALAXIE" className="h-12 w-auto object-contain" />
             <button
               onClick={onToggle}
               className="text-gray-600 hover:text-black transition-all duration-300 shrink-0 cursor-pointer self-center"

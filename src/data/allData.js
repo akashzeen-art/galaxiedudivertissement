@@ -89,67 +89,55 @@ export const slapVideos = [
 export const topFighters = [
   {
     id: 1,
-    name: "ARM WRESTLING",
-    weightClass: "Heavyweight",
-    country: "USA",
+    name: "CARTOON",
+    weightClass: "Animation",
+    country: "FR",
     record: "15-2",
     koPercentage: 85,
     powerRating: 95,
-    image: "/ArmWrestlingProfile.png",
+    image: "https://api.ameora.fun/content/vas_cartoon/thumnbnail/TOMANDJERRY/1.png",
     trending: true
   },
   {
     id: 2,
-    name: "MMA FIGHT",
-    weightClass: "Heavyweight",
-    country: "RUS",
+    name: "COMEDY",
+    weightClass: "Stand-up",
+    country: "FR",
     record: "18-1",
     koPercentage: 92,
     powerRating: 98,
-    image: "/MMAFightProfile.png",
+    image: "https://api.ameora.fun/content/GalaxiWebsite/COMEDY-50/i1.jpg",
     trending: false
   },
   {
     id: 3,
-    name: "TAEKWONDO",
-    weightClass: "Light Heavyweight",
-    country: "BRA",
+    name: "COOKING",
+    weightClass: "Gourmet",
+    country: "FR",
     record: "12-3",
     koPercentage: 78,
     powerRating: 88,
-    image: "/TaekwondoProfile.png",
+    image: "https://api.ameora.fun/content/GalaxiWebsite/COOKING/i4.jpg",
     trending: true
   },
   {
     id: 4,
-    name: "KICKBOXING",
-    weightClass: "Middleweight",
-    country: "UK",
+    name: "FASHION",
+    weightClass: "Beauty & Style",
+    country: "FR",
     record: "14-4",
     koPercentage: 71,
     powerRating: 82,
-    image: "/KickBoxingProfile.png",
+    image: "https://api.ameora.fun/content/GalaxiWebsite/FASHION-24/i3.jpg",
     trending: false
   },
-  {
-    id: 5,
-    name: "Young Gun",
-    weightClass: "Welterweight",
-    country: "CAN",
-    record: "8-1",
-    koPercentage: 89,
-    powerRating: 85,
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop",
-    trending: true
-  }
 ];
 
 export const rankings = [
-  { rank: 1, fighter: "ARM WRESTLING", record: "18-1", koPercentage: 92 },
-  { rank: 2, fighter: "MMA FIGHT", record: "15-2", koPercentage: 85 },
-  { rank: 3, fighter: "TAEKWONDO", record: "16-3", koPercentage: 87 },
-  { rank: 4, fighter: "KICKBOXING", record: "11-1", koPercentage: 91 },
-  { rank: 5, fighter: "SLAP FIGHT", record: "12-3", koPercentage: 78 }
+  { rank: 1, fighter: "CARTOON", record: "18-1", koPercentage: 92 },
+  { rank: 2, fighter: "COMEDY", record: "15-2", koPercentage: 85 },
+  { rank: 3, fighter: "COOKING", record: "16-3", koPercentage: 87 },
+  { rank: 4, fighter: "FASHION", record: "11-1", koPercentage: 91 },
 ];
 
 export const aiRecommendations = [

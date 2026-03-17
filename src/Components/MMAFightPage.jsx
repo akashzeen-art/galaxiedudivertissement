@@ -2,50 +2,60 @@ import React, { useState } from 'react';
 import { Play, ChevronLeft, ChevronRight } from 'lucide-react';
 import AnimatedTitle from './AnimatedTitle';
 
+const BASE = 'https://api.ameora.fun/content/GalaxiWebsite/COOKING';
+const TITLES = [
+  "Basque aux œufs",
+  "Biscuit roulé au chocolat",
+  "Boulettes de viande de porc",
+  "Burger au barbecue",
+  "Burger de boeuf et fraises",
+  "Carbonnade flamande",
+  "Cotoletta milanaise",
+  "Côte de boeuf",
+  "Curry de la Réunion",
+  "Curry de poulet aux champignons",
+  "Dinde farcie",
+  "Double burger",
+  "Homard grillé",
+  "Kumpir turque",
+  "Lamb Kebab",
+  "Lasagna Bolognese",
+  "Mafé au poulet",
+  "Mafé cuisine",
+  "Maison Saumon",
+  "Moroccan Tagine",
+  "Nouilles au boeuf",
+  "Nouilles de poulet",
+  "Pâtes & champignons",
+  "Pâtisserie à la viande hachée",
+  "Pizza végétarienne",
+  "Plat d'aubergine",
+  "Plat de Valence",
+  "Poisson au curry rouge",
+  "Pommes de terre au lait",
+  "Poulet BBQ portugais",
+  "Quiche de thon",
+  "Ragoût de porc",
+  "Recette du Ramadan Tunisien",
+  "Recette japonaise",
+  "Sandwich au banh mi",
+  "Sea Spaghetti",
+  "Tacos au poulet",
+  "Tartelettes au thon",
+  "Tartiflette",
+  "Tomates farcies",
+  "Truffade Cuisine",
+];
+const v = (n) => ({ id: n, thumbnail: `${BASE}/i${n}.jpg`, title: TITLES[n - 1], videoUrl: `${BASE}/v${n}.mp4` });
+
 const MMAFightPage = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [hoverSlide, setHoverSlide] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
 
-  const topSliderVideos = [
-    { id: 1, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/RogerHuertavsChadHinton.png', title: 'Roger Huerta vs Chad Hinton', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/0506d21e-0595-42ad-b75e-0ffb7f177d4f/play_720p.mp4' },
-    { id: 2, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/RampageJacksonvsJoeyBeltran.png', title: 'Rampage Jackson vs Joey Beltran', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/89883c94-0135-4030-ac72-960174d92372/play_720p.mp4' },
-    { id: 3, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/PhilDavisvsFrancisCarmont.png', title: 'Phil Davis vs Francis Carmont', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/9a138d03-c6c0-4ee9-986f-893444a0cf70/play_720p.mp4' },
-    { id: 4, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/PaulDaleyvsRoryMacDonald.png', title: 'Paul Daley vs Rory MacDonald', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/8b8ac3ed-221d-44b8-83d4-6faaecc0857d/play_720p.mp4' },
-    { id: 5, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/PaulDaleyvsRomarioManoeldaSilva.png', title: 'Paul Daley vs Romario Manoel da Silva', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/8b2cb0c8-8f1c-447c-9d90-aec351f4c67c/play_720p.mp4' },
-    { id: 6, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/PaulDaleyvsBrennanWard.png', title: 'Paul Daley vs Brennan Ward', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/e0bb630e-6a38-4b1c-a830-08f619746c35/play_720p.mp4' },
-    { id: 7, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/PatrickyPitbullvsRyanCouture.png', title: 'Patricky Pitbull vs Ryan Couture', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/ca0126aa-94c1-4926-b37d-9f33aab2a805/play_720p.mp4' }
-  ];
-
-  const gridVideos = [
-    { id: 8, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/PatrickyPitbullvsJoshThomson.png', title: 'Patricky Pitbull vs Josh Thomson', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/a0951b01-2c78-4047-90ef-f6a7508c60b7/play_720p.mp4' },
-    { id: 9, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/NoadLahatvsScottCleve.png', title: 'Noad Lahat vs Scott Cleve', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/b4182ba5-39fc-4bc5-8dc7-54df9d1a1bd8/play_720p.mp4' },
-    { id: 10, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/MattMitrionevsCarlSeumanutafa.png', title: 'Matt Mitrione vs Carl Seumanutafa', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/41468e3e-a80e-4e45-be67-71dfd3114d84/play_720p.mp4' },
-    { id: 11, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/LeiMacFarlanevsEmilyDucote.png', title: 'Lei MacFarlane vs Emily Ducote', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/c879b40e-2ef9-4947-80e6-870a741aa29c/play_720p.mp4' },
-    { id: 12, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/JuliaBuddvsArleneBlencowe.png', title: 'Julia Budd vs Arlene Blencowe', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/50b54767-c992-4858-a8a8-5e4cc0c3e579/play_720p.mp4' },
-    { id: 13, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/JohnSaltervsBrandonHalsey.png', title: 'John Salter vs Brandon Halsey', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/8149ea95-b891-44be-9ee7-1bd8bc41a0b7/play_720p.mp4' },
-    { id: 14, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/JoeWarrenvsJoeSoto.png', title: 'Joe Warren vs Joe Soto', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/c2ef7a20-42f4-4a26-b4a6-19cb9a7fefcd/play_720p.mp4' },
-    { id: 15, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/JavyAyalavsRaphaelButler.png', title: 'Javy Ayala vs Raphael Butler', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/ec14be76-3315-4492-80ff-00196c9b7554/play_720p.mp4' },
-    { id: 16, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/JamesGallaghervsAnthonyTaylor.png', title: 'James Gallagher vs Anthony Taylor', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/066551b6-aa7f-4413-8e77-e4373250d545/play_720p.mp4' },
-    { id: 17, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/GeorgiKarakhanyanvsBubbaJenkins.png', title: 'Georgi Karakhanyan vs Bubba Jenkins', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/e0aea8d8-7357-43e6-a7af-6c26e22e49f7/play_720p.mp4' },
-    { id: 18, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/DouglasLimavsBenSaunders.png', title: 'Douglas Lima vs Ben Saunders', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/201c3be3-4473-46bf-bf15-3aec44883d0b/play_720p.mp4' },
-    { id: 19, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/DerekCamposvsBrandonGirtz3.png', title: 'Derek Campos vs Brandon Girtz 3', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/b9764815-1ec9-4a7f-9579-31660a95b0b5/play_720p.mp4' },
-    { id: 20, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/DeniseKielholtzvsJessicaMiddleton.png', title: 'Denise Kielholtz vs Jessica Middleton', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/d3cf506b-f378-40c2-982a-4aa6e1b95781/play_720p.mp4' },
-    { id: 21, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/ChinzoMachidavsMarioNavarro.png', title: 'Chinzo Machida vs Mario Navarro', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/8a0961e0-d365-4b0f-be9b-1abb88fda42e/play_720p.mp4' },
-    { id: 22, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/BrennanWardvsDennisOlson.png', title: 'Brennan Ward vs Dennis Olson', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/e2d9064c-bd94-4b4e-b82b-582ad7e2618b/play_720p.mp4' },
-    { id: 23, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/AlexanderShlemenkovsKendallGrove.png', title: 'Alexander Shlemenko vs Kendall Grove', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/50232254-5402-4a15-8f07-74d53605ecee/play_720p.mp4' }
-  ];
-
-  const hoverSliderVideos = [
-    { id: 24, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/AlejandraLaravsLenaOvchynnikova.png', title: 'Alejandra Lara vs Lena Ovchynnikova', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/88c841d6-ad03-4a6d-923f-bd789b2753c7/play_720p.mp4' },
-    { id: 25, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/AaronPicovsJustinLinn.png', title: 'Aaron Pico vs Justin Linn', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/43f8690d-d968-4e01-9193-aeb0fd42af67/play_720p.mp4' },
-    { id: 26, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/RogerHuertavsChadHinton.png', title: 'Roger Huerta vs Chad Hinton', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/c879b40e-2ef9-4947-80e6-870a741aa29c/play_720p.mp4' },
-    { id: 27, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/RampageJacksonvsJoeyBeltran.png', title: 'Rampage Jackson vs Joey Beltran', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/50b54767-c992-4858-a8a8-5e4cc0c3e579/play_720p.mp4' },
-    { id: 28, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/PhilDavisvsFrancisCarmont.png', title: 'Phil Davis vs Francis Carmont', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/8149ea95-b891-44be-9ee7-1bd8bc41a0b7/play_720p.mp4' },
-    { id: 29, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/PaulDaleyvsRoryMacDonald.png', title: 'Paul Daley vs Rory MacDonald', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/c2ef7a20-42f4-4a26-b4a6-19cb9a7fefcd/play_720p.mp4' },
-    { id: 30, thumbnail: 'https://api.ameora.fun/content/FightingPortalContent/MMA/Thumbnails/PaulDaleyvsRomarioManoeldaSilva.png', title: 'Paul Daley vs Romario Manoel da Silva', videoUrl: 'https://vz-52f523cb-d38.b-cdn.net/ec14be76-3315-4492-80ff-00196c9b7554/play_720p.mp4' }
-  ];
+  const topSliderVideos = Array.from({ length: 7 }, (_, i) => v(i + 1));
+  const gridVideos = Array.from({ length: 27 }, (_, i) => v(i + 8));
+  const hoverSliderVideos = Array.from({ length: 7 }, (_, i) => v(i + 35));
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % topSliderVideos.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + topSliderVideos.length) % topSliderVideos.length);
@@ -54,10 +64,10 @@ const MMAFightPage = () => {
 
   return (
     <div className="bg-white min-h-screen overflow-x-hidden pt-20 md:pt-24">
-      <div className="relative bg-black py-16 md:py-24" style={{ backgroundImage: 'url(/MMAFIGHTFeaturedBattles.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div className="relative bg-black py-16 md:py-24" style={{ backgroundImage: 'url(https://api.ameora.fun/content/GalaxiWebsite/COOKING/i20.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative max-w-7xl mx-auto px-4 md:px-8">
-          <AnimatedTitle title="MMA FIGHT – Featured Battles" className="text-white mb-8 font-zentry text-4xl md:text-6xl font-black text-center uppercase" />
+          <AnimatedTitle title="CUISINE – Recettes en Vedette" className="text-white mb-8 font-zentry text-4xl md:text-6xl font-black text-center uppercase" />
           <div className="relative">
             <div className="overflow-hidden">
               <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${currentSlide * (100 / 3)}%)` }}>
@@ -84,7 +94,7 @@ const MMAFightPage = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-16">
-        <AnimatedTitle title="Top MMA Fight Matches" className="font-zentry text-4xl md:text-6xl font-black text-center uppercase" />
+        <AnimatedTitle title="Meilleures Recettes de Cuisine" className="font-zentry text-4xl md:text-6xl font-black text-center uppercase" />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-8">
           {gridVideos.map((video) => (
             <div key={video.id} className="relative group cursor-pointer transform hover:scale-105 transition-transform" onClick={() => setSelectedVideo(video)}>
@@ -96,37 +106,34 @@ const MMAFightPage = () => {
         </div>
       </div>
 
-      <div className="relative bg-black py-16 md:py-20" style={{ backgroundImage: 'url(/MMAFIGHTFeaturedBattles.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div className="relative bg-black py-16 md:py-20" style={{ backgroundImage: 'url(https://api.ameora.fun/content/GalaxiWebsite/COOKING/i16.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="max-w-7xl mx-auto px-4 md:px-8 text-center">
-          <AnimatedTitle title="Watch More Intense MMA Fight Battles" className="text-white mb-6 font-zentry text-4xl md:text-6xl font-black text-center uppercase" />
-          {/* <button className="bg-white hover:bg-gray-200 text-black font-general font-bold px-8 py-4 rounded-lg text-lg transition-all">Explore More</button> */}
+          <AnimatedTitle title="Regardez Plus de Délicieuses Vidéos de Cuisine" className="text-white mb-6 font-zentry text-4xl md:text-6xl font-black text-center uppercase" />
         </div>
       </div>
 
-      <div className="relative bg-gray-900 py-16 md:py-24 transition-all duration-500" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} onClick={() => setIsHovered(!isHovered)}>
+      <div className="relative bg-gray-900 py-16 md:py-24">
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative max-w-7xl mx-auto px-4 md:px-8">
-          <AnimatedTitle title="Click Here" className="text-white mb-8 font-zentry text-4xl md:text-6xl font-black text-center uppercase" />
-          <div className={`transition-all duration-500 ${isHovered ? 'opacity-100 max-h-[500px]' : 'opacity-0 max-h-0 overflow-hidden'}`}>
-            <div className="relative">
-              <div className="overflow-hidden">
-                <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${hoverSlide * (100 / 3)}%)` }}>
-                  {hoverSliderVideos.map((video) => (
-                    <div key={video.id} className="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-2">
-                      <div className="relative group cursor-pointer" onClick={() => setSelectedVideo(video)}>
-                        <img src={video.thumbnail} alt={video.title} className="rounded-lg w-full aspect-video object-cover" />
-                        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 rounded-lg flex items-center justify-center transition-all"><Play className="w-16 h-16 text-white" fill="white" /></div>
-                        <p className="text-white text-center mt-2 font-semibold">{video.title}</p>
-                      </div>
+          <AnimatedTitle title="Plus de Vidéos de Cuisine" className="text-white mb-8 font-zentry text-4xl md:text-6xl font-black text-center uppercase" />
+          <div className="relative">
+            <div className="overflow-hidden">
+              <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${hoverSlide * (100 / 3)}%)` }}>
+                {hoverSliderVideos.map((video) => (
+                  <div key={video.id} className="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-2">
+                    <div className="relative group cursor-pointer" onClick={() => setSelectedVideo(video)}>
+                      <img src={video.thumbnail} alt={video.title} className="rounded-lg w-full aspect-video object-cover" />
+                      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 rounded-lg flex items-center justify-center transition-all"><Play className="w-16 h-16 text-white" fill="white" /></div>
+                      <p className="text-white text-center mt-2 font-semibold">{video.title}</p>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
-              <button onClick={prevHoverSlide} className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm p-2 rounded-full"><ChevronLeft className="w-6 h-6 text-white" /></button>
-              <button onClick={nextHoverSlide} className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm p-2 rounded-full"><ChevronRight className="w-6 h-6 text-white" /></button>
-              <div className="flex justify-center gap-2 mt-6">
-                {hoverSliderVideos.map((_, idx) => (<button key={idx} onClick={() => setHoverSlide(idx)} className={`w-2 h-2 rounded-full transition-all ${hoverSlide === idx ? 'bg-white w-8' : 'bg-white/50'}`} />))}
-              </div>
+            </div>
+            <button onClick={prevHoverSlide} className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm p-2 rounded-full"><ChevronLeft className="w-6 h-6 text-white" /></button>
+            <button onClick={nextHoverSlide} className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm p-2 rounded-full"><ChevronRight className="w-6 h-6 text-white" /></button>
+            <div className="flex justify-center gap-2 mt-6">
+              {hoverSliderVideos.map((_, idx) => (<button key={idx} onClick={() => setHoverSlide(idx)} className={`w-2 h-2 rounded-full transition-all ${hoverSlide === idx ? 'bg-white w-8' : 'bg-white/50'}`} />))}
             </div>
           </div>
         </div>

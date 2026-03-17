@@ -17,17 +17,16 @@ import AIRecommendations from './Components/AIRecommendations.jsx';
 import NewsSection from './Components/NewsSection.jsx';
 import CommunitySection from './Components/CommunitySection.jsx';
 import Footer from './Components/Footer.jsx';
-import ArmWrestlingPage from './Components/ArmWrestlingPage.jsx';
-import SlapFightPage from './Components/SlapFightPage.jsx';
-import MMAFightPage from './Components/MMAFightPage.jsx';
-import TaekwondoPage from './Components/TaekwondoPage.jsx';
-import KickboxingPage from './Components/KickboxingPage.jsx';
+import CartoonPage from './Components/ArmWrestlingPage.jsx';
+import ComedyPage from './Components/SlapFightPage.jsx';
+import CookingPage from './Components/MMAFightPage.jsx';
+import FashionPage from './Components/TaekwondoPage.jsx';
 import { heroData, featuredEvents, slapVideos, topFighters, rankings } from './data/allData';
 
 const App = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSidebarMinimized, setIsSidebarMinimized] = useState(false);
-  const [activePage, setActivePage] = useState('Home');
+  const [activePage, setActivePage] = useState('Accueil');
 
   function handleMobileMenuToggle() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -45,7 +44,7 @@ const App = () => {
 
   const renderPageContent = () => {
     switch(activePage) {
-      case 'Home':
+      case 'Accueil':
         return (
           <>
             <EnhancedHeroSection />
@@ -88,16 +87,14 @@ const App = () => {
             <div>News Section</div>
           </div>
         );
-      case 'Arm Wrestling':
-        return <ArmWrestlingPage />;
-      case 'Slap Fight':
-        return <SlapFightPage />;
-      case 'MMA Fight':
-        return <MMAFightPage />;
-      case 'Taekwondo':
-        return <TaekwondoPage />;
-      case 'Kickboxing':
-        return <KickboxingPage />;
+      case 'Dessin Animé':
+        return <CartoonPage />;
+      case 'Comédie':
+        return <ComedyPage />;
+      case 'Cuisine':
+        return <CookingPage />;
+      case 'Mode':
+        return <FashionPage />;
       default:
         return (
           <>

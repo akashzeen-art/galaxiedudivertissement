@@ -18,7 +18,7 @@ const TopFighters = ({ fighters }) => {
         viewport={{ once: true }}
       >
         <AnimatedTitle
-          title="TOP FIGHTERS"
+          title="MEILLEURES CATÉGORIES"
           className="font-zentry text-3xl md:text-4xl font-bold text-black mb-8 text-center uppercase"
         />
         
@@ -62,7 +62,7 @@ const TopFighters = ({ fighters }) => {
               <div className="space-y-3">
                 <div>
                   <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-500">Power Rating</span>
+                    <span className="text-gray-500">Popularité</span>
                     <span className="text-black font-bold">{fighter.powerRating}%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
@@ -78,7 +78,7 @@ const TopFighters = ({ fighters }) => {
                 
                 <div>
                   <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-500">KO %</span>
+                    <span className="text-gray-500">Note</span>
                     <span className="text-black font-bold">{fighter.koPercentage}%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
