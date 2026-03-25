@@ -1,5 +1,6 @@
 import TiltCard from './TiltCard';
 import AnimatedTitle from './AnimatedTitle';
+import comedyImage from '../assets/image.png';
 
 const EnhancedFeatures = ({ onSelectCategory }) => {
   const features = [
@@ -50,7 +51,44 @@ const EnhancedFeatures = ({ onSelectCategory }) => {
                 index === 0 ? 'md:col-span-2 md:row-span-2' : ''
               } bg-blue-75 rounded-3xl p-8 border border-white/20 backdrop-blur-md h-96 md:h-[65vh] flex flex-col justify-end relative overflow-hidden`}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-violet-300/20 to-transparent" style={index === 0 ? { backgroundImage: 'url(https://api.ameora.fun/content/vas_cartoon/thumnbnail/TOMANDJERRY/3.png)', backgroundSize: 'cover', backgroundPosition: 'center' } : index === 1 ? { backgroundImage: 'url(https://api.ameora.fun/content/GalaxiWebsite/COMEDY-50/i5.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' } : index === 2 ? { backgroundImage: 'url(https://api.ameora.fun/content/GalaxiWebsite/COOKING/i16.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' } : index === 3 ? { backgroundImage: 'url(https://api.ameora.fun/content/GalaxiWebsite/FASHION-24/i18.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' } : {}} />
+              <div
+                className="absolute inset-0 bg-gradient-to-br from-violet-300/20 to-transparent"
+                style={
+                  index === 0
+                    ? {
+                        backgroundImage:
+                          'url(https://api.ameora.fun/content/vas_cartoon/thumnbnail/TOMANDJERRY/3.png)',
+                        backgroundSize: '100% 100%',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
+                      }
+                    : index === 1
+                      ? {
+                          backgroundImage:
+                            `url(${comedyImage})`,
+                          backgroundSize: '100% 100%',
+                          backgroundPosition: 'center',
+                          backgroundRepeat: 'no-repeat',
+                        }
+                      : index === 2
+                        ? {
+                            backgroundImage:
+                              'url(https://api.ameora.fun/content/GalaxiWebsite/COOKING/i16.jpg)',
+                            backgroundSize: '100% 100%',
+                            backgroundPosition: 'center',
+                            backgroundRepeat: 'no-repeat',
+                          }
+                        : index === 3
+                          ? {
+                              backgroundImage:
+                                'url(https://api.ameora.fun/content/GalaxiWebsite/FASHION-24/i18.jpg)',
+                              backgroundSize: '100% 100%',
+                              backgroundPosition: 'center',
+                              backgroundRepeat: 'no-repeat',
+                            }
+                          : {}
+                }
+              />
               <div className="relative z-10">
                 <h3 className="font-zentry text-3xl md:text-5xl font-black text-white mb-2 uppercase">
                   {feature.title}
